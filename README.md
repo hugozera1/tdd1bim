@@ -12,7 +12,9 @@ O Maven Wrapper incluído baixa o Maven automaticamente.
 2. Inicie a API: `./mvnw spring-boot:run` (Windows: `.\mvnw.cmd spring-boot:run`).
 3. Acesse `http://localhost:8080/tarefas`.
 
-Sem Docker, execute `database/criar-banco.sql` como administrador do PostgreSQL.
+O Docker expõe o banco na porta 5433 para evitar conflito com um PostgreSQL instalado.
+Sem Docker, execute `database/criar-banco.sql` como administrador do PostgreSQL
+e configure `DB_URL=jdbc:postgresql://localhost:5432/todo` para a porta padrão.
 O script completo da tabela está em `src/main/resources/schema.sql` e é
 executado automaticamente na inicialização. O Hibernate valida a estrutura.
 As credenciais locais padrão são `todo/todo`, banco `todo`.
